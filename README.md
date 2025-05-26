@@ -11,6 +11,42 @@ and orientation.
 
 ---
 
+## Dubins Vehicle Model
+I used the Dubins vehicle model as the foundation for simulating the trajectory of an autonomous tractor in 2D space. The Dubins model is a simplified kinematic representation of a non-holonomic vehicle, such as a car or tractor, that moves at a constant forward speed (or bounded speed) and has a bounded turning radius. It is commonly used in path planning and control for ground vehicles where constraints on curvature and orientation apply.
+
+### Vehicle Kinematics
+The state of a Dubins vehicle is represented by the tuple ($`x,y,\phi`$), where:
+- $`x,y`$: Position in 2D space
+- $`\phi`$: Heading angle (orientation with respect to the x-axis)
+
+The vehicle evolves according to the following differential equations:
+
+$`\left[
+\begin{aligned} 
+\dot{x} &= u \cdot \cos(\phi) \\
+\dot{y} &= u \cdot \sin(\phi) \\
+\dot{\phi} &= \omega 
+\end{aligned}\right]
+`$
+
+Where:
+- $`u`$: Linear (forward) velocity
+- $`\omega`$: Angular (turning) velocity
+
+These equations are implemented in the MATLAB function `car.m`, which is solved over time using `ode45` to simulate motion.
+
+### Why Use the Dubins Model?
+This model is ideal for:
+- Capturing realistic motion constraints of wheeled mobile robots,
+- Evaluating nonlinear controllers (e.g., Lyapunov-based) in trajectory-following tasks,
+- Simulating behavior without the overhead of full dynamic modeling (e.g., friction, mass, etc.)
+
+Its simplicity allows clear analysis of path feasibility, tracking performance, and controller behavior in constrained environments like farming fields.
+
+
+
+---
+
 ## Control Theory
 ### Nonlinear Controller
 This control strategy is based on Lyapunov stability analysis, detailed in the paper:
