@@ -80,9 +80,10 @@ The discrete-time PI control law for each channel is formulated as:
    $` u_V(k) = K_{p,v} \cdot e_v(k) + K_{i,v} \sum_{j=0}^{k} e_v(j) \cdot T_s + \frac{u_{\text{ref}}(k)}{G_v} `$ 
    
    Where: 
-   - $` e_v(k) = u_{\text{ref}}(k) - u_{\text{mes}}(k) `$ is the velocity error at time step $` k `$, 
-   - $` K_{p,u}`$, $`K_{i,u}`$ are the proportional and integral gains, $`T_s`$ is the sampling time,
-   - $` G_v `$ is the plant gain for velocity control,
+   - $`e_v(k) = u_{\text{ref}}(k) - u_{\text{mes}}(k)`$ is the velocity error at time step $` k `$, 
+   - $`K_{p,u}`$, $`K_{i,u}`$ are the proportional and integral gains,
+   - $`T_s = 0.05s`$ is the sampling time,
+   - $`G_v = 0.2159`$  is the identified plant gain for velocity control,
    - $`\frac{u_{\text{ref}}(k)}{G_v}`$ represents a feedforward component to improve tracking.
 
 #### Angular Velocity Controller 
@@ -94,10 +95,29 @@ The discrete-time PI control law for each channel is formulated as:
    Where: 
    - $`e_\omega(k) = \omega_{\text{ref}}(k) - \omega_{\text{mes}}(k)`$ is the turning rate error, 
    - $`K_{p,\omega}`$, $`K_{i,\omega}`$ are the PI gains for angular control,
-   - $` G_\omega`$ is the plant gain for angular rate.
+   - $`T_s = 0.05s`$ is the sampling time,
+   - $` G_\omega = 0.238`$ is the average plant gain for turning rate (derived from empirical testing). 
    - $`\frac{\omega_{\text{ref}}(k)}{G_\omega}`$ represents a feedforward component to improve tracking.
 
 These control laws ensure the system tracks the desired speeds accurately and compensates for steady-state error through integral action.
+
+#### Root Locus-Based Gain Selection
+To ensure stability and responsiveness, the PI controller parameters were selected via root locus analysis from the Loop Transfer Function: 
+
+$` L(s) = \frac{K_pG(s+\frac{K_i}{K_p})}{s}; \; CLTF(s) = \frac{sG(s)K_p + G(s)K_i}{s[1+G(s)K_p]+G(s)K_i} `$
+
+This reveals a zero at $`s = -\frac{K_i}{K_p}`$ and a pole at the origin. The gain $`K_p`$ determines how far the closed-loop pole travels along the locus.
+
+To ensure stability and avoid aliasing when using digital control, the Nyquist-Shannon sampling theorem plays a role:
+- The sampling frequency should be 6–10× faster than the dominant pole frequency (natural response rate).
+- Sampling time $`T_s = 0.05s`$ has a sampling frequency $`f_s = 20Hz`$.
+- $`\omega_{sampling} = 2\pi f_s \approx 125.66rad/s`$
+
+Thus, for a sampling time of 50 ms, we desired pole locations around:
+
+$`s \approx −3`$ (i.e., time constant $`\tau = \frac{1}{3}`$ seconds)
+
+This provides sufficient margin for the controller to track and stabilize the system without introducing numerical errors or aliasing in discrete-time computation.
 
 ---
 ## File Structure
