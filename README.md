@@ -126,6 +126,10 @@ Thus, for a sampling time of 50 ms, we desired pole locations around:
 
 $`s \approx −3`$ (i.e., time constant $`\tau = \frac{1}{3}`$ seconds)
 
+<img src="vel_final.jpg" width="500"/>
+
+<img src="rot_final.jpg" width="500"/>
+
 This provides sufficient margin for the controller to track and stabilize the system without introducing numerical errors or aliasing in discrete-time computation.
 
 #### Motor Control Signal Distribution
