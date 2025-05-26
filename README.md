@@ -60,7 +60,8 @@ The discrete-time PI control law for each channel is formulated as:
    - $`K_{p,\omega}`$, $`K_{i,\omega}`$ are the PI gains for angular control,
    - $` G_\omega`$ is the plant gain for angular rate.
    - $`\frac{\omega_{\text{ref}}(k)}{G_\omega}`$ represents a feedforward component to improve tracking.
-    
+
+These control laws ensure the system tracks the desired speeds accurately and compensates for steady-state error through integral action.
 ---
 ## File Structure
 
