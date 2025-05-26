@@ -148,6 +148,13 @@ These are passed to the respective motor joints via `sim.setJointTargetVelocity(
 | `car.m`      | Defines vehcle kinematics used in the simulation ($`\frac{dx}{dt}`$, $`\frac{dy}{dt}`$, $`\frac{d\phi}{dt}`$) |
 | `plotcar.m`  | Visualization helper that plots the current robot state and trajectory |
 
+### CoppeliaSim Simulations
+| File         | Description |
+|--------------|-------------|
+| `simulation_scene.ttt` | The main CoppeliaSim scene file. Includes the environment, robot, gate markers, and associated object configuration |
+| `car.m`      | Defines vehcle kinematics used in the simulation ($`\frac{dx}{dt}`$, $`\frac{dy}{dt}`$, $`\frac{d\phi}{dt}`$) |
+| `plotcar.m`  | Visualization helper that plots the current robot state and trajectory |
+
 ---
 
 ## Output Example
