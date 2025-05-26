@@ -91,7 +91,7 @@ The discrete-time PI control law for each channel is formulated as:
    - $`G_v = 0.2159`$  is the identified plant gain for velocity control,
    - $`\frac{u_{\text{ref}}(k)}{G_v}`$ represents a feedforward component to improve tracking.
 
-![Gv](Gv\_step\_response.png)
+![Gv](Gv_step_response.png)
 
 #### Angular Velocity Controller 
 
