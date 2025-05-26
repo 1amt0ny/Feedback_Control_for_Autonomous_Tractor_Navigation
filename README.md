@@ -144,16 +144,19 @@ These are passed to the respective motor joints via `sim.setJointTargetVelocity(
 
 | File         | Description |
 |--------------|-------------|
-| `unicycle.m` | Main driver script that simulates a unicycle-like Dubins vehicle navigating to a target using nonlinear control |
-| `car.m`      | Defines vehcle kinematics used in the simulation ($`\frac{dx}{dt}`$, $`\frac{dy}{dt}`$, $`\frac{d\phi}{dt}`$) |
-| `plotcar.m`  | Visualization helper that plots the current robot state and trajectory |
+| `unicycle.m` | Main driver script that simulates a unicycle-like Dubins vehicle navigating to a target using nonlinear control. |
+| `car.m`      | Defines vehcle kinematics used in the simulation ($`\frac{dx}{dt}`$, $`\frac{dy}{dt}`$, $`\frac{d\phi}{dt}`$). |
+| `plotcar.m`  | Visualization helper that plots the current robot state and trajectory. |
 
 ### CoppeliaSim Simulations
 | File         | Description |
 |--------------|-------------|
-| `simulation_scene.ttt` | The main CoppeliaSim scene file. Includes the environment, robot, gate markers, and associated object configuration |
-| `car.m`      | Defines vehcle kinematics used in the simulation ($`\frac{dx}{dt}`$, $`\frac{dy}{dt}`$, $`\frac{d\phi}{dt}`$) |
-| `plotcar.m`  | Visualization helper that plots the current robot state and trajectory |
+| `Tractor_Scene.ttt` | The main CoppeliaSim scene file. Includes the environment, robot, gate markers, and associated object configuration. |
+| `tractor_controllers`      | Main script attached to the robot or simulation. Contains `sysCall_init()`, `sysCall_actuation()`, `sysCall_sensing()`, and `sysCall_cleanup()` functions implementing the Lyapunov-based nonlinear controller and PI controllers. |
+| `trajectory.txt`  | Text file logged during simulation, recording the trajectory of the vehicle (timestamp, X, Y) for further debugging and analysis. |
+| `PI.txt` | Performance logging file that stores velocity and turning rate references vs. actual measurements (e.g., `uRef`, `uMes`, `wRef`, `wMes`). |
+
+The Lua control code may be optionally divided into separate files (e.g., `init.lua`, `actuation.lua`, `sensing.lua`) for better modularity and loaded via `require()` or similar techniques.
 
 ---
 
