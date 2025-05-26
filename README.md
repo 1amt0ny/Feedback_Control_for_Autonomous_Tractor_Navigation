@@ -12,7 +12,8 @@ and orientation.
 ---
 
 ## Control Theory
-This project leverages a control strategy based on Lyapunov stability analysis, detailed in the paper:
+### Nonlinear Controller
+This control strategy is based on Lyapunov stability analysis, detailed in the paper:
 
 > _Closed-loop steering of unicycle-like vehicles via Lyapunov techniques_
 
@@ -31,6 +32,35 @@ Where:
 
 These controllers were simulated on a Dubins vehicle model in MATLAB and tested on the tractor model in CoppeliaSim for real-time validation.
 
+### Proportional-Integral (PI) Controllers
+The next layer of control involves translating the velocity and turning rate references into actual motor commands. This is achieved through PI (Proportional-Integral) controllers, which are implemented in the `sysCall_actuation()` function.
+
+The discrete-time PI control law for each channel is formulated as:
+
+#### Linear Velocity Controller
+
+   The control signal $`u_{V(k)}`$ for velocity is given by: 
+   
+   $` u_V(k) = K_{p,v} \cdot e_v(k) + K_{i,v} \sum_{j=0}^{k} e_v(j) \cdot T_s + \frac{u_{\text{ref}}(k)}{G_v} `$ 
+   
+   Where: 
+   - $` e_v(k) = u_{\text{ref}}(k) - u_{\text{mes}}(k) `$ is the velocity error at time step $` k `$, 
+   - $` K_{p,u}`$, $`K_{i,u}`$ are the proportional and integral gains, $`T_s`$ is the sampling time,
+   - $` G_v `$ is the plant gain for velocity control,
+   - $`\frac{u_{\text{ref}}(k)}{G_v}`$ represents a feedforward component to improve tracking.
+
+#### Angular Velocity Controller 
+
+   The control signal \( u_\Omega(k) \) for turning rate is given by: 
+  
+   $` u_\Omega(k) = K_{p,\omega} \cdot e_\omega(k) + K_{i,\omega} \sum_{j=0}^{k} e_\omega(j) \cdot T_s + \frac{\omega_{\text{ref}}(k)}{G_\omega} `$
+   
+   Where: 
+   - $`e_\omega(k) = \omega_{\text{ref}}(k) - \omega_{\text{mes}}(k)`$ is the turning rate error, 
+   - $`K_{p,\omega}`$, $`K_{i,\omega}`$ are the PI gains for angular control,
+   - $` G_\omega`$ is the plant gain for angular rate.
+   - $`\frac{\omega_{\text{ref}}(k)}{G_\omega}`$ represents a feedforward component to improve tracking.
+    
 ---
 ## File Structure
 
