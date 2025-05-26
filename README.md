@@ -62,6 +62,7 @@ The discrete-time PI control law for each channel is formulated as:
    - $`\frac{\omega_{\text{ref}}(k)}{G_\omega}`$ represents a feedforward component to improve tracking.
 
 These control laws ensure the system tracks the desired speeds accurately and compensates for steady-state error through integral action.
+
 ---
 ## File Structure
 
