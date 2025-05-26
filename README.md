@@ -14,6 +14,8 @@ and orientation.
 ## Control Theory
 This project leverages a control strategy based on Lyapunov stability analysis, detailed in the paper:
 
+> _Closed-loop steering of unicycle-like vehicles via Lyapunov techniques_
+
 The nonlinear controller used is based on Lyapunov stability analysis. The Lyapunov candidate function is:
 
 $` V = \frac{1}{2} \lambda e^2 + \frac{1}{2} (\alpha^2 + h\theta^2) `$; $`\;`$ $`\lambda, h > 0`$
