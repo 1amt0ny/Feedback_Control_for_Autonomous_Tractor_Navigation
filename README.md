@@ -1,4 +1,4 @@
-<img src="tractor&gate.png" width="900"/>
+![tg](tractor&gate.png)
 # Autonomous Tractor Parking Simulation
 This repository contains the code and simulation models developed as part of my Bachelor of Science disertation on autonomous parking for Amiga farming tractors. It complements my senior thesis paper: 
 
