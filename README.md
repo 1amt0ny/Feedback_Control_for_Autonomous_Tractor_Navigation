@@ -4,7 +4,7 @@ This repository contains the code and simulation models developed as part of my 
 ![_Feedback Control for Autonomous Tractor Navigation_](thesis_paper.pdf)
 
 
-The project applies nonlinear control theory (using Lyapunov stability principles) and Proportional-Integral (PI) feedback controllers in both MATLAB and CoppeliaSim environments to achieve precise trajectory tracking and parking maneuvers for differential-drive vehicles.
+This research applies nonlinear control theory (using Lyapunov stability principles) and Proportional-Integral (PI) feedback controllers in both MATLAB and CoppeliaSim environments to achieve precise trajectory tracking and parking maneuvers for differential-drive vehicles.
 
 ## Project Summary
 This thesis has explored the integration and application of nonlinear control
