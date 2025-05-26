@@ -124,6 +124,19 @@ $`s \approx −3`$ (i.e., time constant $`\tau = \frac{1}{3}`$ seconds)
 
 This provides sufficient margin for the controller to track and stabilize the system without introducing numerical errors or aliasing in discrete-time computation.
 
+#### Motor Control Signal Distribution
+
+The two computed control outputs are then combined to set the left and right wheels speeds of the tractor:
+
+$`
+\begin{aligned}
+v_{left} &= -(u_v - u_\omega) \\
+v_{right} &= -(u_v + u_\omega)
+\end{aligned}
+`$
+
+These are passed to the respective motor joints via `sim.setJointTargetVelocity()` in the actuation script.
+
 ---
 ## File Structure
 
