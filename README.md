@@ -1,5 +1,10 @@
 # Autonomous Tractor Parking Simulation
-This repository contains the code and simulation models developed as part of my research on autonomous parking for Amiga farming tractors. The project applies nonlinear control theory (using Lyapunov stability principles) and Proportional-Integral (PI) feedback controllers in both MATLAB and CoppeliaSim environments to achieve precise trajectory tracking and parking maneuvers for differential-drive vehicles.
+This repository contains the code and simulation models developed as part of my Bachelor of Science disertation on autonomous parking for Amiga farming tractors. It complements my senior thesis paper: 
+
+> _Feedback Control for Autonomous Tractor Navigation_
+
+
+The project applies nonlinear control theory (using Lyapunov stability principles) and Proportional-Integral (PI) feedback controllers in both MATLAB and CoppeliaSim environments to achieve precise trajectory tracking and parking maneuvers for differential-drive vehicles.
 
 ## Project Summary
 This thesis has explored the integration and application of nonlinear control
