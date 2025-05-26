@@ -91,6 +91,8 @@ The discrete-time PI control law for each channel is formulated as:
    - $`G_v = 0.2159`$  is the identified plant gain for velocity control,
    - $`\frac{u_{\text{ref}}(k)}{G_v}`$ represents a feedforward component to improve tracking.
 
+![Gv](Gv step response.png)
+
 #### Angular Velocity Controller 
 
    The control signal \( u_\Omega(k) \) for turning rate is given by: 
