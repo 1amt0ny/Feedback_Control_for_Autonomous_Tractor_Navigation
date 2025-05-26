@@ -2,6 +2,7 @@
 This repository contains the code and simulation models developed as part of my Bachelor of Science disertation on autonomous parking for Amiga farming tractors. It complements my senior thesis paper: 
 
 > _Feedback Control for Autonomous Tractor Navigation_
+
 ![thesis]{thesis_paper.pdf}
 
 
