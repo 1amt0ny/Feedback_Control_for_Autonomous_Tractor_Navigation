@@ -175,15 +175,21 @@ The MATLAB simulation shows the reference trajectory converging to the target po
 ### Example 1: 
 Trajectory of the Tractor Navigating from Starting Pose $`[0, 0, 180\degree]`$ to Target Pose $`[5, 5, 90\degree]`$ in CoppeliaSim
 
+<img src="controllers_tracking_accuracy/trajectory1.jpg" width="500"/>
+
 <img src="controllers_tracking_accuracy/vel1.jpg" width="500"/> <img src="controllers_tracking_accuracy/rot1.jpg" width="500"/>
 
 ### Example 2: 
 Trajectory of the Tractor Navigating from Starting Pose $`[0, 0, 180\degree]`$ to Target Pose $`[0, 5, 45\degree]`$ in CoppeliaSim
 
+<img src="controllers_tracking_accuracy/trajectory2.jpg" width="500"/>
+
 <img src="controllers_tracking_accuracy/vel2.jpg" width="500"/> <img src="controllers_tracking_accuracy/rot2.jpg" width="500"/>
 
 ### Example 3: 
 Trajectory of the Tractor Navigating from Starting Pose $`[0, 0, 180\degree]`$ to Target Pose $`[3, -3, 90\degree]`$ in CoppeliaSim
+
+<img src="controllers_tracking_accuracy/trajectory3.jpg" width="500"/>
 
 <img src="controllers_tracking_accuracy/vel3.jpg" width="500"/> <img src="controllers_tracking_accuracy/rot3.jpg" width="500"/>
 
