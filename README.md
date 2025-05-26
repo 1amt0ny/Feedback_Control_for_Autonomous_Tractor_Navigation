@@ -2,11 +2,12 @@
 This repository contains the code and simulation models developed as part of my research on autonomous parking for Amiga farming tractors. The project applies nonlinear control theory (using Lyapunov stability principles) and Proportional-Integral (PI) feedback controllers in both MATLAB and CoppeliaSim environments to achieve precise trajectory tracking and parking maneuvers for differential-drive vehicles.
 
 ## Project Summary
-- **Objective**: Enable autonomous parking of a differential-drive robotic tractor using a combination of nonlinear control and PI feedback.
-- **Control Strategy**: Lyapunov-based stability theory for nonlinear trajectory tracking; PI controllers for low-level velocity and turning rate regulation.
-- **Simulation Tools**: 
-  - **MATLAB** for theoretical modeling and trajectory visualization.
-  - **CoppeliaSim (V-REP)** for simulating physical robot behavior and logging real-time data.
+This thesis has explored the integration and application of nonlinear control
+techniques and Proportional-Integral (PI) controllers within a simulated environment
+to advance the field of autonomous vehicle navigation. The primary objective was to
+develop an effective navigation strategy that enables our farming tractor to perform an
+autonomous precise parking maneuver through the dynamic adjustment of its trajectory
+and orientation.
 
 ---
 
@@ -18,5 +19,59 @@ The nonlinear controller used is based on Lyapunov stability analysis. The Lyapu
 $` V = \frac{1}{2} \lambda e^2 + \frac{1}{2} (\alpha^2 + h\theta^2) `$; $`\;`$ $`\lambda, h > 0`$
 
 From this, the control laws are derived as:
-- **Velocity Reference**: $` u\_{REF} = \gamma * \cos(\alpha) * e`$
+- **Linear Velocity Reference**: $` u\_{REF} = \gamma * \cos(\alpha) * e`$
 - **Angular Velocity Reference**: $` \omega\_{REF} = k\alpha + \gamma\cos(\alpha)(\frac{\sin(\alpha)}{\alpha})(\alpha + h\theta)`$
+
+Where:
+- $`e`$: distance to target
+- $`\alpha`$, $`\theta`$: orientation error parameters
+- $`k`$, $`\gamma`$, $`h`$: tuning constants
+
+These controllers were simulated on a Dubins vehicle model in MATLAB and tested on the tractor model in CoppeliaSim for real-time validation.
+
+---
+## File Structure
+
+### MATLAB Simulations
+
+| File         | Description |
+|--------------|-------------|
+| `unicycle.m` | Main driver script that simulates a unicycle-like Dubins vehicle navigating to a target using nonlinear control |
+| `car.m`      | Defines vehcle kinematics used in the simulation ($`\frac{dx}{dt}`$, $`\frac{dy}{dt}`$, $`\frac{d\phi}{dt}`$) |
+| `plotcar.m`  | Visualization helper that plots the current robot state and trajectory |
+
+---
+
+## Output Example
+
+The MATLAB simulation shows the reference trajectory converging to the target pose. You can also compare the reference path with actual trajectory data logged from CoppeliaSim.
+
+---
+
+## Data Collection and Analysis
+
+In CoppeliaSim, vehicle position and control data are logged in `trajectory.txt` and `PI.txt`. MATLAB scripts are used to:
+- Parse the data files
+- Compare measured vs reference values
+- Evaluate trajectory deviation and system response
+
+---
+
+## References
+- Samson, C. (1993). Control of Chained Systems: Application to Path Following and Time-Varying Point-Stabilization of Mobile Robots. INRIA.
+- Velagic, J., Osmic, N., & Lacevic, B. (2008). Nonlinear Motion Control of Mobile Robot Dynamic Model.
+- Ljung, L. (1999). System Identification: Theory for the User. Prentice-Hall.
+- M. Aicardi, G. Casalino, A. Bicchi, and A. Balestrino. Closed loop steering of unicycle like vehicles via lyapunov techniques. IEEE Robotics & Automation Magazine, 2(1):27–35, 1995.
+- Peter I. Corke. Robotics, Vision & Control: Fundamental Algorithms in MATLAB. Springer, second edition, 2017. ISBN 978-3-319-54413-7.
+- Andreas Folkers, Matthias Rick, and Christof B¨uskens. Controlling an autonomous vehicle with deep reinforcement learning. In 2019 IEEE Intelligent Vehicles Symposium (IV), pages 2025–2031, 2019.
+- B Ravi Kiran, Ibrahim Sobh, Victor Talpaert, Patrick Mannion, Ahmad A. Al Sallab, Senthil Yogamani, and Patrick P´erez. Deep reinforcement learning for autonomous driving: A survey. IEEE Transactions on Intelligent Transportation Systems, 23(6):4909–4926, 2022.
+- Jaepoong Lee and Seongjin Yim. Comparative study of path tracking controllers on low friction roads for autonomous vehicles. Machines, 11(3), 2023.
+- Guo Qing, Zhang Zheng, and Xu Yue. Path-planning of automated guided vehicle based on improved dijkstra algorithm. In 2017 29th Chinese Control And Decision Conference (CCDC), pages 7138–7143, 2017.
+- C. Samson and K. Ait-Abderrahim. Feedback control of a nonholonomic wheeled cart in cartesian space. In Proceedings. 1991 IEEE International Conference on Robotics and Automation, pages 1136–1141 vol.2, 1991.
+- Moveh Samuel, Mohamed Hussein, and Maziah Binti Mohamad. A review of some pure-pursuit based path tracking techniques for control of autonomous vehicle. International Journal of Computer Applications, 135(1):35–38, 2016.
+- Steven H. Strogatz. Nonlinear Dynamics and Chaos. CRC Press Taylor & Francis Group, 6000 Broken Sound Parkway NW, Suite 300, Boca Raton, FL 33487-2742, 2018.
+- Jasmin Velagic, Bakir Lacevic, and Nedim Osmic. Nonlinear Motion Control of Mobile Robot Dynamic Model. 06 2008.
+- Wikipedia contributors. Bendixson’s inequality — Wikipedia, the free encyclopedia. https://en.wikipedia.org/w/index.php?title=Bendixson%27s_inequality&oldid=1196572784, 2024. [Online; accessed 25-June-2024].
+- Wikipedia contributors. Nyquist–shannon sampling theorem — Wikipedia, the free encyclopedia. https://en.wikipedia.org/w/index.php?title=Nyquist%E2%80%93Shannon_sampling_theorem&oldid=1222782688, 2024. [Online; accessed 8-May-2024].
+- Fitri Yakub and Yasuchika Mori. Comparative study of autonomous path-following vehicle control via model predictive control and linear quadratic control. Proceedings of the Institution of Mechanical Engineers, Part D: Journal of Automobile Engineering, 229(12):1695–1714, 2015.
+- Qin Zou, Qin Sun, Long Chen, Bu Nie, and Qingquan Li. A comparative analysis of lidar slam-based indoor navigation for autonomous vehicles. IEEE Transactions on Intelligent Transportation Systems, 23(7):6907–6921, 2022. 
