@@ -85,6 +85,8 @@ The **discrete-time** PI control law for each channel is formulated as:
    - $`G_v = 0.2159`$  is the identified plant gain for velocity control,
    - $`\frac{u_{\text{ref}}(k)}{G_v}`$ represents a feedforward component to improve tracking.
 
+Plant Velocity Step Response:
+
 <img src="Plant_step_response/Gv_step_response.png" width="500"/>
 
 #### Angular Velocity Controller 
@@ -99,6 +101,8 @@ The **discrete-time** PI control law for each channel is formulated as:
    - $`T_s = 0.05s`$ is the sampling time,
    - $` G_\omega = 0.238`$ is the average plant gain for turning rate (derived from empirical testing). 
    - $`\frac{\omega_{\text{ref}}(k)}{G_\omega}`$ represents a feedforward component to improve tracking.
+
+Plant Turning Rate Step Response:
 
 <img src="Plant_step_response/Gw_step_response.png" width="500"/>
 
