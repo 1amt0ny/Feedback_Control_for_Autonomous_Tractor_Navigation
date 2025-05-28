@@ -167,25 +167,25 @@ The Lua control code may be optionally divided into separate files (e.g., `init.
 
 ---
 
-## Output Example
+## CoppeliaSim Tractor Model
 
 The MATLAB simulation shows the reference trajectory converging to the target pose. You can also compare the reference path with actual trajectory data logged from CoppeliaSim.
 
-### Example 1: 
+### Navigation Example 1: 
 Trajectory of the Tractor Navigating from Starting Pose $`[0, 0, 180\degree]`$ to Target Pose $`[5, 5, 90\degree]`$ in CoppeliaSim
 
 <img src="controllers_tracking_accuracy/trajectory1.png" width="500"/>
 
 <img src="controllers_tracking_accuracy/vel1.jpg" width="500"/> <img src="controllers_tracking_accuracy/rot1.jpg" width="500"/>
 
-### Example 2: 
+### Navigation Example 2: 
 Trajectory of the Tractor Navigating from Starting Pose $`[0, 0, 180\degree]`$ to Target Pose $`[0, 5, 45\degree]`$ in CoppeliaSim
 
 <img src="controllers_tracking_accuracy/trajectory2.png" width="500"/>
 
 <img src="controllers_tracking_accuracy/vel2.jpg" width="500"/> <img src="controllers_tracking_accuracy/rot2.jpg" width="500"/>
 
-### Example 3: 
+### Navigation Example 3: 
 Trajectory of the Tractor Navigating from Starting Pose $`[0, 0, 180\degree]`$ to Target Pose $`[3, -3, 90\degree]`$ in CoppeliaSim
 
 <img src="controllers_tracking_accuracy/trajectory3.png" width="500"/>
