@@ -1,4 +1,3 @@
-![tg](tractor&gate.png)
 # Autonomous Tractor Parking Simulation
 This repository contains the code and simulation models developed as part of my Bachelor of Science disertation on autonomous parking for Amiga farming tractors. It complements my senior thesis paper: 
 
@@ -14,6 +13,8 @@ to advance the field of autonomous vehicle navigation. The primary objective was
 develop an effective navigation strategy that enables our farming tractor to perform an
 autonomous precise parking maneuver through the dynamic adjustment of its trajectory
 and orientation.
+
+![tg](tractor&gate.png)
 
 ---
 
