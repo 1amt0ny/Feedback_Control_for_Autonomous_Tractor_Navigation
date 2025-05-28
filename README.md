@@ -57,7 +57,7 @@ The nonlinear controller used is based on Lyapunov stability analysis. The Lyapu
 $` V = \frac{1}{2} \lambda e^2 + \frac{1}{2} (\alpha^2 + h\theta^2) `$; $`\;`$ $`\lambda, h > 0`$
 
 From this, the control laws are derived as:
-- **Linear Velocity Reference**: $` u\_{REF} = \gamma * \cos(\alpha) * e`$
+- **Linear Velocity Reference**: $` u\_{REF} = \gamma\cos(\alpha) * e`$
 - **Angular Velocity Reference**: $` \omega\_{REF} = k\alpha + \gamma\cos(\alpha)(\frac{\sin(\alpha)}{\alpha})(\alpha + h\theta)`$
 
 Where:
