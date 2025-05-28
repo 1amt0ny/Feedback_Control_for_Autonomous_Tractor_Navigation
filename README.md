@@ -46,7 +46,7 @@ This model is ideal for capturing realistic motion constraints of wheeled mobile
 
 ---
 
-## Control Theory
+## Control Strategy
 ### Nonlinear Controller
 This control strategy is based on Lyapunov stability analysis, detailed in the paper:
 
