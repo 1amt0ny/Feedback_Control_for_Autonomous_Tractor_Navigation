@@ -77,7 +77,7 @@ These controllers were simulated on a Dubins vehicle model in MATLAB and tested 
 ### Proportional-Integral (PI) Controllers
 The next layer of control involves translating the velocity and turning rate references into actual motor commands. This is achieved through PI (Proportional-Integral) controllers, which are implemented in the `sysCall_actuation()` function.
 
-The discrete-time PI control law for each channel is formulated as:
+The **discrete-time** PI control law for each channel is formulated as:
 
 #### Linear Velocity Controller
 
