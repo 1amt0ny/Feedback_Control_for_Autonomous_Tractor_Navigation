@@ -42,14 +42,7 @@ Where:
 These equations are implemented in the MATLAB function `car.m`, which is solved over time using `ode45` to simulate motion.
 
 ### Why Use the Dubins Model?
-This model is ideal for:
-- Capturing realistic motion constraints of wheeled mobile robots,
-- Evaluating nonlinear controllers (e.g., Lyapunov-based) in trajectory-following tasks,
-- Simulating behavior without the overhead of full dynamic modeling (e.g., friction, mass, etc.)
-
-Its simplicity allows clear analysis of path feasibility, tracking performance, and controller behavior in constrained environments like farming fields.
-
-
+This model is ideal for capturing realistic motion constraints of wheeled mobile robots. It's a great tool for evaluating nonlinear controllers (e.g., Lyapunov-based) in trajectory-following tasks, and it simulates behavior without the overhead of full dynamic modeling (e.g., friction, mass, etc.). Its simplicity allows clear analysis of path feasibility, tracking performance, and controller behavior in constrained environments like farming fields.
 
 ---
 
